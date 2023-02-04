@@ -1,0 +1,14 @@
+info:
+  application:
+    name: expense-tracker
+    description: Srping Boot Expense Tracker Application
+    author: Ibrahim Kesici
+
+server:
+  port: 8081
+
+spring:
+  datasources:
+    url: jdbc:postgresql://localhost:5432/expensetracker
+    username: admin
+    password: admin
