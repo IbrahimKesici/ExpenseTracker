@@ -27,8 +27,16 @@ public class ExpenseServiceImplementation implements ExpenseService{
         if (expense.isPresent()){
             return expense.get();
         }
-        throw new RuntimeException("Expense not found!");
-
+        throw new RuntimeException("Expense with id " + id + " is not found!");
     }
+
+    public void deleteExpenseById(Long id){
+        expenseRepository.deleteById(id);
+    }
+
+    public Expense saveExpense(Expense expense){
+        return expenseRepository.save(expense);
+    }
+
 }
 

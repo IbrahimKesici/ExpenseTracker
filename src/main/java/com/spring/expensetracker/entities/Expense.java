@@ -5,9 +5,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 
 @Data
@@ -28,4 +31,5 @@ public class Expense {
     private String category;
     @Column(name = "expense_date")
     private Date date;
+
 }
