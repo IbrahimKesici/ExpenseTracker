@@ -6,3 +6,7 @@ spring:
   sql:
     init:
       mode: always
+  jpd:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

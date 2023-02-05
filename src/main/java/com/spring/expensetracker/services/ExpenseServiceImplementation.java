@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExpenseServiceImplementation implements ExpenseService{
@@ -19,6 +20,15 @@ public class ExpenseServiceImplementation implements ExpenseService{
 
     public List<Expense> getAllExpenses(){
         return expenseRepository.findAll();
+    }
+
+    public Expense getExpenseById(Long id){
+        Optional<Expense> expense =  expenseRepository.findById(id);
+        if (expense.isPresent()){
+            return expense.get();
+        }
+        throw new RuntimeException("Expense not found!");
+
     }
 }
 
