@@ -1,6 +1,7 @@
 package com.spring.expensetracker.services;
 
 import com.spring.expensetracker.entities.Expense;
+import com.spring.expensetracker.exceptions.ResourceNotFoundException;
 import com.spring.expensetracker.repositories.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class ExpenseServiceImplementation implements ExpenseService{
         if (expense.isPresent()){
             return expense.get();
         }
-        throw new RuntimeException("Expense with id " + id + " is not found!");
+        throw new ResourceNotFoundException("Expense with id " + id + " is not found!");
     }
 
     public void deleteExpenseById(Long id){
